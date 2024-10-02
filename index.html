@@ -10,10 +10,10 @@
   </head>
   <body>
     <header>
-      <a href="#" class="logo">Petite Baby <sup></sup></a>
+      <a href="#" class="logo scroll-link" onclick="scrollToTop()">Petite Baby <sup></sup></a>
       <nav>
         <ul class="navbar">
-          <li><a href="#">Home</a></li>
+          <li><a href="#" class="scroll-link" onclick="scrollToTop()">Home</a></li> <!-- Menambahkan fungsi scrollToTop -->
           <li><a href="#products-section" class="scroll-link">Products</a></li>
           <li><a href="#buy-section" class="scroll-link">Buy</a></li> <!-- Menambahkan class untuk scroll -->
           <li><a href="#kontak-section" class="scroll-link">Contact</a></li>
@@ -101,14 +101,13 @@
 
 
     <section id="kontak-section"> 
-    <div class="newsletter">
+    <div class="newsletter-kontak">
         <div>
           <h2>Kontak WhatsApp Kami.</h2>
           <p>Dapatkan informasi terbaru tentang produk kami melalui WhatsApp.</p>
           <div class="social-media">
-            <a href="#"><i class='bx bxl-whatsapp'></i> WhatsApp</a>
-            <!-- <a href="#"><i class='bx bxl-facebook'></i> Facebook</a> --> <!-- Dihapus -->
-            <!-- <a href="#"><i class='bx bxl-instagram'></i> Instagram</a> --> <!-- Dihapus -->
+            <a href="https://wa.me/6281288339022" style="font-size: 1.2em;"><i class='bx bxl-whatsapp' style="font-size: 1.5em;"></i> WhatsApp</a> <!-- Ganti 'nomor_anda' dengan nomor WhatsApp Anda -->
+        
           </div>
         </div>
       </div>
@@ -117,7 +116,7 @@
     <footer>
       <div class="footer-container">
         <div class="company-info">
-          <a href="#" class="logo">Petite Baby <sup></sup></a>
+          <a href="#" class="logo scroll-link" onclick="scrollToTop()">Petite Baby <sup></sup></a>
           <p>Kami berkomitmen untuk menyediakan produk berkualitas tinggi yang mendukung kenyamanan dan keamanan si kecil.</p>
           <div class="socials">
             <div><i class='bx bxl'></i></div> <!-- Mengganti icon LinkedIn dengan Shoppe -->
@@ -128,13 +127,13 @@
         <div class="web-pages">
           <div>
             <h3>Informasi</h3>
-            <!-- <a href="#"><p>Tentang</p></a> --> <!-- Dihapus -->
-            <a href="#"><p>Produk</p></a>
-            <a href="#"><p>Buy</p></a>
+           
+            <a href="#products-section" class="scroll-link"><p>Produk</p></a>
+            <a href="#buy-section" class="scroll-link"><p>Buy</p></a>
           </div>
           <div>
             <h3>Kontak</h3>
-            <a href="#"><p>Hubungi Kami</p></a>
+            <a href="#kontak-section" class="scroll-link"><p>Hubungi Kami</p></a>
           </div>
         </div>
       </div>
@@ -143,15 +142,30 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/app.js"></script>
     <script>
-      // Menambahkan fungsi scroll
+      // Menambahkan fungsi scroll dengan offset
       document.querySelectorAll('.scroll-link').forEach(link => {
         link.addEventListener('click', function(e) {
           e.preventDefault();
           const targetId = this.getAttribute('href');
           const targetElement = document.querySelector(targetId);
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+          const offset = 70; // Ganti dengan tinggi header Anda
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         });
       });
+    </script>
+    <script>
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
     </script>
   </body>
 </html>

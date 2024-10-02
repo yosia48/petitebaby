@@ -293,11 +293,11 @@ p {
 }
 
 .newsletter{
-    min-height: 300px;
+    min-height: 250px;
     background: #E1DEFD;
     text-align: center;
     width: 100%;
-    margin: 0 auto;
+    margin: 70px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,8 +305,17 @@ p {
     align-items: center; /* Memusatkan konten */
     gap: 20px; /* Tambahkan jarak antara judul dan ikon */
 }
+.newsletter-kontak{
+    min-height: 200px;
+    background: #ffffff;
+    text-align: center;
+    width: 100%;
+    margin: 70px auto;
+    display: flex;
+    justify-content: center;
+}
 
-.newsletter p{
+.newsletter-kontak p{
     width: 60%;
     margin: 15px auto;
     text-align: center;
