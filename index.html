@@ -147,7 +147,12 @@
         link.addEventListener('click', function(e) {
           e.preventDefault();
           const targetId = this.getAttribute('href');
+          console.log("Target ID:", targetId); // Tambahkan log ini
           const targetElement = document.querySelector(targetId);
+          if (!targetElement) {
+            console.error("Element not found for ID:", targetId); // Log jika elemen tidak ditemukan
+            return;
+          }
           const offset = 70; // Ganti dengan tinggi header Anda
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - offset;
