@@ -301,6 +301,9 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Tambahkan ini untuk mengatur arah konten menjadi kolom */
+    align-items: center; /* Memusatkan konten */
+    gap: 20px; /* Tambahkan jarak antara judul dan ikon */
 }
 
 .newsletter p{
@@ -537,4 +540,27 @@ display: none;
     margin-top: 48px;
   }
 
+}
+
+/* Tambahkan ke file CSS Anda */
+.store-icons {
+  display: flex; /* Mengatur ikon dalam baris */
+  justify-content: center; /* Memusatkan ikon */
+  flex-wrap: wrap; /* Membuat ikon responsif */
+  gap: 0px; /* Tambahkan jarak antara ikon */
+}
+
+.tokopedia-icon {
+    width: 140px; /* Atur ukuran ikon Tokopedia */
+}
+
+.shopee-icon {
+    width: 68px; /* Atur ukuran ikon Shopee */
+}
+
+.store-icons {
+    display: flex; /* Mengatur ikon dalam baris */
+    justify-content: center; /* Memusatkan ikon */
+    flex-wrap: wrap; /* Membuat ikon responsif */
+    gap: 20px; /* Tambahkan jarak antara ikon */
 }

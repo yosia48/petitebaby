@@ -6,6 +6,7 @@
     <title>Petite Baby - Sarung Tangan Bayi</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   </head>
   <body>
     <header>
@@ -13,9 +14,9 @@
       <nav>
         <ul class="navbar">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Buy</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#products-section" class="scroll-link">Products</a></li>
+          <li><a href="#buy-section" class="scroll-link">Buy</a></li> <!-- Menambahkan class untuk scroll -->
+          <li><a href="#kontak-section" class="scroll-link">Contact</a></li>
         </ul>
         <div><i class="bx bx-shopping-bag" id="menu-icon"></i></div>
       </nav>
@@ -29,7 +30,7 @@
       </div>
     </div>
 
-    <section>
+    <section id="products-section"> <!-- Menambahkan id untuk section produk -->
       <div class="blog-header">
         <h2 class="title">Produk Sarung Tangan Bayi</h2>
         <div><button class="btn-outline">Toko Online</button></div>
@@ -87,16 +88,31 @@
       </div>
     </section>
 
+    <section id="buy-section"> 
     <div class="newsletter">
-      <div>
-        <h2>Langganan Newsletter Mingguan Kami.</h2>
-        <p>Dapatkan informasi terbaru tentang produk kami.</p>
-        <div class="form">
-          <input type="email" name="email" id="email" placeholder="Masukkan alamat email Anda">
-          <input type="submit" value="Langganan" class="btn">
-        </div>
+      <h2>Toko Online Kami</h2>
+      <!-- Pindahkan div store-icons di bawah h2 -->
+      <div class="store-icons">
+        <a href="#"><img src="img/tokopedia.svg" alt="Tokopedia" class="store-icon tokopedia-icon" /></a>
+        <a href="#"><img src="img/shopee.svg" alt="Shopee" class="store-icon shopee-icon" /></a>
       </div>
     </div>
+    </section>
+
+
+    <section id="kontak-section"> 
+    <div class="newsletter">
+        <div>
+          <h2>Kontak WhatsApp Kami.</h2>
+          <p>Dapatkan informasi terbaru tentang produk kami melalui WhatsApp.</p>
+          <div class="social-media">
+            <a href="#"><i class='bx bxl-whatsapp'></i> WhatsApp</a>
+            <!-- <a href="#"><i class='bx bxl-facebook'></i> Facebook</a> --> <!-- Dihapus -->
+            <!-- <a href="#"><i class='bx bxl-instagram'></i> Instagram</a> --> <!-- Dihapus -->
+          </div>
+        </div>
+      </div>
+       </section>
 
     <footer>
       <div class="footer-container">
@@ -104,9 +120,9 @@
           <a href="#" class="logo">Petite Baby <sup></sup></a>
           <p>Kami berkomitmen untuk menyediakan produk berkualitas tinggi yang mendukung kenyamanan dan keamanan si kecil.</p>
           <div class="socials">
-            <div><i class='bx bxl-shoppe'></i></div> <!-- Mengganti icon LinkedIn dengan Shoppe -->
-            <div><i class='bx bxl-tokopedia'></i></div> <!-- Mengganti icon Facebook dengan Tokopedia -->
-            <div><i class='bx bxl-tokopedia'></i></div> 
+            <div><i class='bx bxl'></i></div> <!-- Mengganti icon LinkedIn dengan Shoppe -->
+            <div><i class='bx bxl'></i></div> <!-- Mengganti icon Facebook dengan Tokopedia -->
+            <div><i class='bx bxl'></i></div> 
           </div>
         </div>
         <div class="web-pages">
@@ -126,5 +142,16 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/app.js"></script>
+    <script>
+      // Menambahkan fungsi scroll
+      document.querySelectorAll('.scroll-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    </script>
   </body>
 </html>
