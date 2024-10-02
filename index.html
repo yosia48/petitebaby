@@ -13,7 +13,7 @@
       <a href="#" class="logo scroll-link" onclick="scrollToTop()">Petite Baby <sup></sup></a>
       <nav>
         <ul class="navbar">
-          <li><a href="javascript:void(0);" class="scroll-link" onclick="scrollToTop()">Home</a></li> <!-- Ubah href="#" menjadi href="javascript:void(0);" -->
+          <li><a href="#" class="scroll-link" onclick="scrollToTop()">Home</a></li> <!-- Menambahkan fungsi scrollToTop -->
           <li><a href="#products-section" class="scroll-link">Products</a></li>
           <li><a href="#buy-section" class="scroll-link">Buy</a></li> <!-- Menambahkan class untuk scroll -->
           <li><a href="#kontak-section" class="scroll-link">Contact</a></li>
@@ -147,12 +147,7 @@
         link.addEventListener('click', function(e) {
           e.preventDefault();
           const targetId = this.getAttribute('href');
-          console.log("Target ID:", targetId); // Tambahkan log ini
           const targetElement = document.querySelector(targetId);
-          if (!targetElement) {
-            console.error("Element not found for ID:", targetId); // Log jika elemen tidak ditemukan
-            return;
-          }
           const offset = 70; // Ganti dengan tinggi header Anda
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - offset;
