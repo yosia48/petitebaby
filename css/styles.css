@@ -100,7 +100,7 @@ nav {
 .banner {
   margin-top: 80px;
   background-color: rgb(255, 255, 255);
-  background: url(../img/banner-abg.jpg), /* Perbaiki path ke gambar */
+  background: url(../img/banner.jpg), /* Perbaiki path ke gambar */
     linear-gradient(
       to top,
       rgba(255, 255, 255, 0.9) 0%,
