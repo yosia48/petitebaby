@@ -40,9 +40,15 @@
       <div class="SmartUV">
         <div class="blog-card">
           <div class="slideshow-container">
-            <img src="img/product/stwarna.jpg" alt="Sarung Tangan Bayi Warna 1" class="slide active" />
-            <!--<img src="img/product/.jpg" alt="Sarung Tangan Bayi Warna 2" class="slide" />
-            <img src="img/product/.jpg" alt="Sarung Tangan Bayi Warna 3" class="slide" />-->
+            <div class="slide active">
+              <img src="img/product/stwarna.jpg" alt="Sarung Tangan Bayi Warna 1" onclick="openModal(this)" />
+            </div>
+            <div class="slide">
+              <img src="img/product/.jpg" alt="Sarung Tangan Bayi Warna 2" onclick="openModal(this)" />
+            </div>
+            <div class="slide">
+              <img src="img/product/.jpg" alt="Sarung Tangan Bayi Warna 3" onclick="openModal(this)" />
+            </div>
             <div class="dot-container"></div>
           </div>
           <h3>Sarung Tangan Bayi Warna</h3>
@@ -72,6 +78,13 @@
           <button class="btn">Beli Sekarang</button>
         </div>
         <!-- Add more blog-card divs as needed -->
+      </div>
+
+      <!-- Modal for image preview -->
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="dot-container"></div>
       </div>
     </section>
 
@@ -155,6 +168,19 @@
           top: 0,
           behavior: 'smooth'
         });
+      }
+    </script>
+    <script>
+      function openModal(img) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.style.display = "none";
       }
     </script>
   </body>
