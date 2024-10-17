@@ -284,6 +284,32 @@ p {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  border: 1px solid #ddd; /* Add border for product card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.blog-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.blog-card img {
+  border-radius: 8px 8px 0 0; /* Rounded corners for the image */
+  margin-bottom: 15px; /* Add space below the image */
+}
+
+.blog-card h3 {
+  font-size: 1.5rem; /* Increase font size for product title */
+  margin: 15px; /* Add margin for spacing */
+  font-family: 'Arial', sans-serif; /* Change font for better readability */
+  color: var(--heading-color); /* Ensure the title color is consistent */
+}
+
+.blog-card p {
+  margin: 10px; /* Add margin for spacing */
+  color: var(--text-color);
+  line-height: 1.6; /* Improve line height for readability */
 }
 
 .slideshow-container {
