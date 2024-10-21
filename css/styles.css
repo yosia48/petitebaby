@@ -180,7 +180,7 @@ nav {
   border-radius: 8px;
   margin-bottom: 18px;
   width: 100%;
-  height: 280px;
+  height: 400px; /* Increased height for better visibility */
 }
 
 .featured-card h2 {
@@ -288,6 +288,8 @@ p {
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
   transition: transform 0.3s; /* Smooth transition for hover effect */
+  padding: 20px; /* Add padding for better spacing */
+  text-align: center; /* Center align text */
 }
 
 .blog-card:hover {
@@ -295,8 +297,8 @@ p {
 }
 
 .blog-card img {
-  border-radius: 8px 8px 0 0; /* Rounded corners for the image */
-  margin-bottom: 15px; /* Add space below the image */
+  width: 100%; /* Ensure the image takes full width */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .blog-card h3 {
@@ -315,9 +317,8 @@ p {
 .slideshow-container {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 400px; /* Adjust height as needed */
   overflow: hidden;
-  border-radius: 8px;
 }
 
 .slide {
@@ -325,38 +326,19 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 600px; /* Increased height for better visibility */
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   object-fit: cover;
 }
 
 .slide.active {
-  opacity: 1;
+  opacity: 1; /* Show active slide */
 }
 
+/* Remove dot styles */
 .dot-container {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.dot.active {
-  background-color: #fff;
+  display: none; /* Hide the dot container */
 }
 
 @media screen and (max-width: 992px) {
@@ -716,3 +698,38 @@ display: none;
   margin: 0; /* Menghilangkan margin untuk mengurangi tinggi */
   line-height: 1.4; /* Menjaga jarak antar baris */
 }
+
+.product-info {
+  display: flex;
+  justify-content: space-between; /* Space between price and button */
+  align-items: center; /* Center align items vertically */
+  margin-top: 10px; /* Add margin for spacing */
+}
+
+.price {
+  font-size: 1.2rem; /* Increase font size for price */
+  color: var(--heading-color); /* Use heading color for price */
+}
+
+/* Update button styles */
+.btn {
+  padding: 12px 20px; /* Adjust padding */
+  background: #3974FE; /* Button background color */
+  font-size: 1rem; /* Adjust font size */
+  border-radius: 4px; /* Rounded corners */
+  color: #fff; /* Button text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s; /* Smooth background transition */
+}
+
+.btn:hover {
+  background: #1E5FFF; /* Darker shade on hover */
+}
+
+
+
+
+
+
+
+

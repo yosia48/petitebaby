@@ -26,42 +26,35 @@ document.addEventListener('DOMContentLoaded', function() {
   
   slideshows.forEach(slideshow => {
     const slides = slideshow.querySelectorAll('.slide');
-    const dotContainer = slideshow.querySelector('.dot-container');
     let currentSlide = 0;
-    let slideInterval;
 
-    // Create dots
-    slides.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotContainer.appendChild(dot);
-    });
+    // Remove dot functionality
+    // const dotContainer = slideshow.querySelector('.dot-container');
+    // slides.forEach((_, index) => {
+    //   const dot = document.createElement('div');
+    //   dot.classList.add('dot');
+    //   if (index === 0) dot.classList.add('active');
+    //   dot.addEventListener('click', () => goToSlide(index));
+    //   dotContainer.appendChild(dot);
+    // });
 
     function goToSlide(n) {
+      // Remove active class from current slide
       slides[currentSlide].classList.remove('active');
-      dotContainer.children[currentSlide].classList.remove('active');
+      
+      // Update current slide index
       currentSlide = (n + slides.length) % slides.length;
+      
+      // Add active class to new current slide
       slides[currentSlide].classList.add('active');
-      dotContainer.children[currentSlide].classList.add('active');
     }
 
-    function nextSlide() {
-      goToSlide(currentSlide + 1);
-    }
+    // Start slideshow
+    goToSlide(currentSlide); // Initialize the first slide
 
-    function startSlideshow() {
-      slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-    }
-
-    function stopSlideshow() {
-      clearInterval(slideInterval);
-    }
-
-    slideshow.addEventListener('mouseenter', stopSlideshow);
-    slideshow.addEventListener('mouseleave', startSlideshow);
-
-    startSlideshow();
+    // Automatic slideshow
+    setInterval(() => {
+      goToSlide(currentSlide + 1); // Move to the next slide every 3 seconds
+    }, 3000); // Change the interval time as needed
   });
 });
